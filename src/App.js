@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Budget from "./components/Budget";
+import Budget from "./components/Budget/Budget";
 import Remaining from "./components/Remaining";
 import ExpenseTotal from "./components/Expense/ExpenseTotal";
 import ExpenseList from "./components/Expense/ExpenseList";

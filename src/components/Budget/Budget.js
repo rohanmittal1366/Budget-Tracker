@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import ViewBudget from "./ViewBudget";
 import EditBudget from "./EditBudget";
-import { AppContext } from "./AppContext";
+import { AppContext } from "../AppContext";
 
 const Budget = () => {
   const { budget, dispatch } = useContext(AppContext);
