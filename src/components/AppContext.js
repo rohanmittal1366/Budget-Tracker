@@ -21,6 +21,11 @@ const AppReducer = (state, action) => {
         budget: action.payload,
       };
 
+    case "SET_COST":
+      return {
+        ...state,
+        expenses: [...action.payload],
+      };
     default:
       return state;
   }

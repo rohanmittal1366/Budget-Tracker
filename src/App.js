@@ -6,8 +6,11 @@ import ExpenseTotal from "./components/Expense/ExpenseTotal";
 import ExpenseList from "./components/Expense/ExpenseList";
 import AddExpenseForm from "./components/Expense/AddExpenseForm";
 import { AppProvider } from "./components/AppContext";
+import { useState } from "react";
 
 function App() {
+  const [editExpenseId, setEditExpenseId] = useState("");
+
   return (
     <AppProvider>
       <div className="container">
@@ -26,13 +29,16 @@ function App() {
         <h3 className="mt-3 ">Expenses</h3>
         <div className="row-mt-3 ">
           <div className="col-sm  ">
-            <ExpenseList />
+            <ExpenseList setEditExpenseId={setEditExpenseId} />
           </div>
         </div>
         <h3 className="mt-3">Add Expenses</h3>
         <div className="row mt-3">
           <div className="col-sm">
-            <AddExpenseForm />
+            <AddExpenseForm
+              editExpenseId={editExpenseId}
+              setEditExpenseId={setEditExpenseId}
+            />
           </div>
         </div>
       </div>

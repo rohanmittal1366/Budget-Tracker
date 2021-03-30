@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import ExpenseItem from "./ExpenseItem";
 import { AppContext } from "../AppContext";
 
-const ExpenseList = () => {
+const ExpenseList = ({ setEditExpenseId }) => {
   const { expenses } = useContext(AppContext);
 
   const [filteredExpenses, setfilteredExpenses] = useState(expenses || []);
@@ -16,6 +16,11 @@ const ExpenseList = () => {
       filteredExpense.name.toLowerCase().includes(event.target.value)
     );
     setfilteredExpenses(searchResults);
+  };
+
+  const onEditClick = (id) => {
+    // console.log(props.id);
+    setEditExpenseId(id);
   };
 
   return (
@@ -32,6 +37,7 @@ const ExpenseList = () => {
             id={expense.id}
             name={expense.name}
             cost={expense.cost}
+            onEditClick={() => onEditClick(expense.id)}
           />
         ))}
       </ul>
